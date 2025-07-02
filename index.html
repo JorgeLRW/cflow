@@ -16,29 +16,41 @@
         .container {
             max-width: 800px;
             margin: 40px auto;
-            padding: 30px;
+            padding: 40px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.2em;
             color: #212529;
             border-bottom: 2px solid #dee2e6;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
         }
         h2 {
-            font-size: 1.5em;
-            color: #495057;
-            margin-top: 30px;
+            font-size: 1.6em;
+            color: #343a40;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 10px;
         }
         p, li {
             font-size: 1em;
             color: #495057;
         }
+        ul {
+            padding-left: 20px;
+        }
         strong {
             color: #000;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
         }
         a {
             color: #007bff;
@@ -49,9 +61,16 @@
         }
         .footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.9em;
             color: #6c757d;
+        }
+        .disclaimer {
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 20px;
+            border-left: 3px solid #007bff;
+            padding-left: 15px;
         }
     </style>
 </head>
@@ -61,31 +80,42 @@
         <h1>Privacy Policy for Cflow</h1>
         <p><strong>Last Updated:</strong> July 3, 2025</p>
 
-        <p>Thank you for using Cflow ("the Extension"). Your privacy is critically important to us.</p>
+        <h2>Introduction</h2>
+        <p>This Privacy Policy describes the privacy practices for the Cflow Chrome Extension ("the Extension"). This policy explains that we do not collect personal data and clarifies how the Extension interacts with your browser and the websites you visit to perform its intended function. Your privacy and data security are of paramount importance to us.</p>
 
-        <h2>1. Data Collection and Usage</h2>
-        <p>The Cflow extension has a single purpose: to expand text shortcuts that you, the user, create. To achieve this, the extension operates with the following principles:</p>
+        <h2>1. Information We Do Not Collect</h2>
+        <p>The Extension is designed with a "privacy-first" approach. We want to be explicitly clear about the data we <strong>DO NOT</strong> collect, store, or transmit:</p>
         <ul>
-            <li><strong>No Personal Data is Collected:</strong> We do not collect, store, or transmit any personally identifiable information.</li>
-            <li><strong>User-Created Rules are Stored Locally:</strong> The custom shortcuts and rules you create are saved using the standard <code>chrome.storage</code> API. This data is stored only on your local computer and is never sent to any external server.</li>
-            <li><strong>No Website Data is Tracked:</strong> The extension runs on the websites you visit to detect and replace your shortcuts. It does not read, record, or transmit any other information from these websites. Your browsing activity remains completely private.</li>
+            <li><strong>No Personally Identifiable Information (PII):</strong> We do not collect any PII, such as your name, email address, age, or location.</li>
+            <li><strong>No Authentication Information:</strong> We do not collect passwords, credentials, or any other authentication data.</li>
+            <li><strong>No Web History or User Activity:</strong> We do not track your browsing history, clicks, mouse movements, or any other general user activity.</li>
+            <li><strong>No Website Content:</strong> We do not scrape, save, or transmit any content from the websites you visit, including text, images, or personal communications.</li>
         </ul>
 
-        <h2>2. Permissions</h2>
-        <p>The Cflow extension requires the minimum permissions necessary to function:</p>
+        <h2>2. Data That is Stored Locally</h2>
+        <p>The sole function of the Extension is to store and manage text-expansion shortcuts that you, the user, create. This data ("User Rules") is stored locally on your computer using the standard <code>chrome.storage.local</code> API provided by the browser. This data is under your control, on your device, and is never transmitted to our servers or any third party.</p>
+
+        <h2>3. Chrome Extension Permissions Justification</h2>
+        <p>The Extension requests the minimum permissions required for it to function:</p>
         <ul>
-            <li><strong>storage:</strong> To save your custom shortcuts locally on your device.</li>
-            <li><strong>activeTab & Host Permissions:</strong> To allow the text-replacement functionality to work on the websites you use.</li>
+            <li><code>storage</code>: This permission is essential to save your User Rules on your local device. Without it, the Extension cannot remember your shortcuts.</li>
+            <li><code>activeTab</code> and Host Permissions (<code>&lt;all_urls&gt;</code>): These permissions are required for the content script to operate on the websites you visit. The script's only function is to listen for your shortcut triggers in text fields and perform the replacement. This interaction is local and does not involve data collection.</li>
         </ul>
 
-        <h2>3. No Remote Code</h2>
-        <p>The extension contains no remote code and operates entirely within your browser, ensuring your data is never exposed to external servers.</p>
+        <h2>4. Security and No Remote Code</h2>
+        <p>The Extension is built for security. It contains no remote code, analytics trackers, or external scripts. The entire codebase is self-contained within the package reviewed and distributed by the Chrome Web Store. This is enforced by a strict Content Security Policy (CSP) that prevents the loading of any external resources.</p>
 
-        <h2>4. Changes to This Policy</h2>
-        <p>We may update this privacy policy in the future. Any changes will be reflected in a new version of the extension.</p>
+        <h2>5. Children's Privacy</h2>
+        <p>The Extension is not directed to individuals under the age of 13. We do not knowingly collect any information from children under 13. If you become aware that a child has provided us with information, please contact us, although as stated, the Extension does not collect or transmit any data.</p>
+        
+        <h2>6. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be reflected in a new version of the Extension and an updated policy available at this URL. We encourage you to review this policy periodically.</p>
 
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions about this privacy policy, please contact us at <a href="mailto:cflowsup@gmail.com">cflowsup@gmail.com</a>.</p>
+        <h2>7. Disclaimer</h2>
+        <p class="disclaimer">The Extension is provided "as is," without warranty of any kind, express or implied. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at <a href="mailto:cflowsup@gmail.com">cflowsup@gmail.com</a>.</p>
     </div>
 
     <div class="footer">
